@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>JPA_View</artifactId>
+    <artifactId>springBoot_1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>JPA_View</name>
+    <name>springBoot_1</name>
     <description>JPA_View</description>
     <properties>
         <java.version>15</java.version>
