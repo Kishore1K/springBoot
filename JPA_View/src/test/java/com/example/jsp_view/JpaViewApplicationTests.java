@@ -1,4 +1,4 @@
-package com.example.jpa_view;
+package com.example.jsp_view;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
