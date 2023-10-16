@@ -12,4 +12,10 @@ public class MainController {
         System.out.println("MainController.home");
         return  "home";
     }
+
+    @RequestMapping("/contact")
+    public  String contact(){
+        System.out.println("MainController.contact");
+        return  "contact";
+    }
 }
