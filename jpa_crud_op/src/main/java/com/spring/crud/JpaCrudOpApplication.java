@@ -73,9 +73,14 @@ public class JpaCrudOpApplication {
         });
 */
 
-        System.out.println("userRepo.findByName(\"Kishore\") = " + userRepo.findByName("Kishore"));
+       /* System.out.println("userRepo.findByName(\"Kishore\") = " + userRepo.findByName("Kishore"));
         System.out.println("userRepo.findByNameOrEmail(\"Kishore\", \"ankush@gmail.com\") = " + userRepo.findByNameOrEmail("Kishore", "ankush@gmail.com"));
-        System.out.println("userRepo.findByNameAndEmail(\"Kishore\", \"kishore@gmail.com\") = " + userRepo.findByNameAndEmail("Kishore", "kishore@gmail.com"));
+        System.out.println("userRepo.findByNameAndEmail(\"Kishore\", \"kishore@gmail.com\") = " + userRepo.findByNameAndEmail("Kishore", "kishore@gmail.com"));*/
+
+
+//        System.out.println("userRepo.getUserbyName() = " + userRepo.getUserbyNameACity("ankush", "kgf"));
+
+        System.out.println("userRepo.getAll() = " + userRepo.getAll());
     }
 
 }
