@@ -57,7 +57,7 @@ public class JpaCrudOpApplication {
         userRepo.save(user);*/
         
         
-        
+  /*
         Iterable<User> itr = userRepo.findAll();
         itr.forEach(user -> {
             System.out.println("user = " + user);
@@ -71,8 +71,11 @@ public class JpaCrudOpApplication {
         itr1.forEach(user -> {
             System.out.println("user = " + user);
         });
+*/
 
-
+        System.out.println("userRepo.findByName(\"Kishore\") = " + userRepo.findByName("Kishore"));
+        System.out.println("userRepo.findByNameOrEmail(\"Kishore\", \"ankush@gmail.com\") = " + userRepo.findByNameOrEmail("Kishore", "ankush@gmail.com"));
+        System.out.println("userRepo.findByNameAndEmail(\"Kishore\", \"kishore@gmail.com\") = " + userRepo.findByNameAndEmail("Kishore", "kishore@gmail.com"));
     }
 
 }
