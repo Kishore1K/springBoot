@@ -10,18 +10,18 @@ public class BookService {
 
     static {
         list.add(new Book(1,"Java Ref", "James Gosling" ));
-        list.add(new Book(2,'Ramayana', "Valmiki" ));
-        list.add(new Book(3,'Python', "van Rasom" ));
-        list.add(new Book(4,'C Ref', "Dannie Ritche" ));
-        list.add(new Book(5,'Harry Potter', "J K Rowling" ));
+        list.add(new Book(2,"Ramayana", "Valmiki" ));
+        list.add(new Book(3,"Python", "van Rasom" ));
+        list.add(new Book(4,"C Ref", "Dannie Ritche" ));
+        list.add(new Book(5,"Harry Potter", "J K Rowling" ));
     }
 
     public List<Book> getAllBooks(){
         return list;
     }
 
-    public List<Book> getBookById(int id){ 
-        Book book = null;
+    public Book getBookById(int id){ 
+       Book book = null;
         book = list.stream().filter(e -> e.getId()==id).findFirst().get();
         return book; 
     }
