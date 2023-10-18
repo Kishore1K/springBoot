@@ -22,7 +22,7 @@ public class bookController {
 
     private BookService bookService;
     
-    @RequestMapping(value = "/books", method = RequestMethod.GET)
+    @RequestMapping(value = "/book", method = RequestMethod.GET)
     public ResponseEntity<?> getBooks(){
 
         List<Book> list = this.bookService.getAllBooks();
@@ -36,7 +36,7 @@ public class bookController {
 
     @GetMapping("/book/{id}")
     public ResponseEntity<?> getBook(@PathVariable("id") int id){
-        Book book =  this.bookService.getBookById(id);
+        Optional<Book> book =  this.bookService.getBookById(id);
         if(book==null){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
@@ -59,6 +59,8 @@ public class bookController {
     public Book updateBook(@RequestBody Book book, @PathVariable("id") int id){
         return  this.bookService.updateBook(book, id);
     }
+
+
 
 
 }

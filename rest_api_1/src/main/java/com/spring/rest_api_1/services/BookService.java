@@ -3,12 +3,18 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import com.spring.rest_api_1.entity.Book;
+import com.spring.rest_api_1.repo.BookRepo;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BookService {
 
-    private  static List<Book> list = new ArrayList<>();
+    private BookRepo bookRepo;
+    public BookService(BookRepo bookRepo) {
+        this.bookRepo = bookRepo;
+    }
+
+ /*   private  static List<Book> list = new ArrayList<>();
 
     static {
         list.add(new Book(1,"Java Ref", "James Gosling" ));
@@ -16,39 +22,32 @@ public class BookService {
         list.add(new Book(3,"Python", "van Rasom" ));
         list.add(new Book(4,"C Ref", "Dannie Ritche" ));
         list.add(new Book(5,"Harry Potter", "J K Rowling" ));
-    }
+    }*/
 
     public List<Book> getAllBooks(){
-        return list;
+        return bookRepo.findAll();
     }
 
-    public Book getBookById(int id) {
-       Book book = null;
-       try {
-           book = list.stream().filter(e -> e.getId()==id).findFirst().get();
+    public Optional<Book> getBookById(int id) {
 
-       }catch (Exception e){
-            e.printStackTrace();
-       }
-        return book;
+        return bookRepo.findById(id);
 
     }
 
 
     public Book addBook(Book book){
-        list.add(book);
-        return  book;
+        return  bookRepo.save(book);
     }
 
 
     public void deleteBook(int id){
-        list= list.stream().filter(book -> book.getId() != id).collect(Collectors.toList());
-
+//        list= list.stream().filter(book -> book.getId() != id).collect(Collectors.toList());
+        bookRepo.deleteById(id);
     }
 
 
     public Book updateBook(Book book, int id) {
-        list = list.stream().map(book1 -> {
+/*        list = list.stream().map(book1 -> {
             if(book1.getId()==id){
                 book1.setTitle(book.getTitle());
                 book1.setAuthor(book.getAuthor());
@@ -56,7 +55,10 @@ public class BookService {
             }
             return book1;
         }).collect(Collectors.toList());
-        return  getBookById(id);
+        return  getBookById(id);*/
+        book.setId(id);
+        return  bookRepo.save(book);
     }
+
 
 }
