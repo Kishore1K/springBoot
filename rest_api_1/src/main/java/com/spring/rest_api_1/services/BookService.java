@@ -1,5 +1,7 @@
 package com.spring.rest_api_1.services;
 import java.util.*;
+import java.util.stream.Collectors;
+
 import com.spring.rest_api_1.entity.Book;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +26,18 @@ public class BookService {
        Book book = null;
         book = list.stream().filter(e -> e.getId()==id).findFirst().get();
         return book; 
+    }
+
+
+    public Book addBook(Book book){
+        list.add(book);
+        return  book;
+    }
+
+
+    public List<Book> deleteBook(int id){
+        return  list.stream().filter(book -> book.getId() != id).collect(Collectors.toList());
+
     }
 
     
