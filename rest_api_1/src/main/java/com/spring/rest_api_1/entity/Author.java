@@ -1,9 +1,9 @@
 package com.spring.rest_api_1.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Author {
@@ -16,6 +16,18 @@ public class Author {
     private  String lname;
 
     private String langauge;
+    @OneToOne(mappedBy = "author")
+    @JsonBackReference
+    private Book bookId;
+    public Book getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(Book bookId) {
+        this.bookId = bookId;
+    }
+
+
 
     public int getaId() {
         return aId;
