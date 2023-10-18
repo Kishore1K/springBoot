@@ -18,8 +18,8 @@ public class bookController {
     @RequestMapping(value = "/books", method = RequestMethod.GET)
     public List<Book> getBooks(){
 
-        
-        return this.bookService.getAllBooks();
+        List<Book> list = this.bookService.getAllBooks();
+        return .size()<0 ? ResponseStatus.;
 
     }
 
@@ -36,8 +36,14 @@ public class bookController {
     }
 
     @DeleteMapping("/book/{id}")
-    public List<Book> deleteBook(@PathVariable("id") int id){
-        return this.bookService.deleteBook(id);
+    public String deleteBook(@PathVariable("id") int id){
+         this.bookService.deleteBook(id);
+         return "Book Deleted";
+    }
+
+    @PutMapping("/book/{id}")
+    public Book updateBook(@RequestBody Book book, @PathVariable("id") int id){
+        return  this.bookService.updateBook(book, id);
     }
 
 

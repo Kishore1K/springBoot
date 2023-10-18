@@ -35,10 +35,22 @@ public class BookService {
     }
 
 
-    public List<Book> deleteBook(int id){
-        return  list.stream().filter(book -> book.getId() != id).collect(Collectors.toList());
+    public void deleteBook(int id){
+        list= list.stream().filter(book -> book.getId() != id).collect(Collectors.toList());
 
     }
 
-    
+
+    public Book updateBook(Book book, int id) {
+        list = list.stream().map(book1 -> {
+            if(book1.getId()==id){
+                book1.setTitle(book.getTitle());
+                book1.setAuthor(book.getAuthor());
+
+            }
+            return book1;
+        }).collect(Collectors.toList());
+        return  getBookById(id);
+    }
+
 }
