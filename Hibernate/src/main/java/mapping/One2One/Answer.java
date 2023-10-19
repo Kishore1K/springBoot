@@ -10,7 +10,7 @@ public class Answer {
     private  int answerId;
     private  String answer;
 
-    @OneToOne(mappedBy = "answer")
+    @ManyToOne
     private  Question question;
 
     public Question getQuestion() {
@@ -49,8 +49,9 @@ public class Answer {
         this.answer = answer;
     }
 
-    public Answer(int answerId, String answer) {
+    public Answer(int answerId, String answer, Question question) {
         this.answerId = answerId;
         this.answer = answer;
+        this.question = question;
     }
 }

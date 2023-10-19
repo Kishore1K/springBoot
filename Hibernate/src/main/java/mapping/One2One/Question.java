@@ -1,6 +1,7 @@
 package mapping.One2One;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Question {
@@ -11,14 +12,13 @@ public class Question {
     private  int questionId;
     private  String question;
 
-    @OneToOne
-    @JoinColumn(name="a_id")
-    private Answer answer;
+    @OneToMany(mappedBy = "question")
+    private List<Answer> answers;
 
-    public Question(int questionId, String question, Answer answer) {
+    public Question(int questionId, String question, List<Answer> answers) {
         this.questionId = questionId;
         this.question = question;
-        this.answer = answer;
+        this.answers = answers;
     }
 
     public Question() {
@@ -30,7 +30,7 @@ public class Question {
         return "Question{" +
                 "questionId=" + questionId +
                 ", question='" + question + '\'' +
-                ", answer=" + answer +
+                ", answer=" + answers +
                 '}';
     }
 
@@ -50,11 +50,13 @@ public class Question {
         this.question = question;
     }
 
-    public Answer getAnswer() {
-        return answer;
+
+
+    public List<Answer> getAnswers() {
+        return answers;
     }
 
-    public void setAnswer(Answer answer) {
-        this.answer = answer;
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
     }
 }

@@ -7,6 +7,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Configuration configuration = new Configuration().configure("hibernate.cfg.xml");
@@ -25,40 +28,25 @@ public class Main {
         answer.setAnswerId(101);
         answer.setQuestion(question);
         answer.setAnswer("programing Language");
-        question.setAnswer(answer);
+        Answer answer1 = new Answer(102, "Robust",question);
+        Answer answer2 = new Answer(103, "platform independent",question);
 
-
-
-        Question question1 = new Question();
-        question1.setQuestion("bangalore is at ");
-
-        Answer answer1 = new Answer();
-        answer1.setAnswerId(102);
-        answer1.setQuestion(question1);
-        answer1.setAnswer("Karanataka");
-        question1.setAnswer(answer1);
-
-
-
-
-        Question question2 = new Question();
-        question2.setQuestion("my name is");
-        Answer answer2 = new Answer();
-        answer2.setAnswerId(103);
-        answer2.setQuestion(question2);
-        answer2.setAnswer("Kishore");
-        question2.setAnswer(answer2);
+        question.setAnswers(Arrays.asList(answer, answer1, answer2));
 
 
 
 
 
+
+
+
+
+/*
         session.save(question);
-        session.save(question1);
-        session.save(question2);
         session.save(answer);
         session.save(answer1);
         session.save(answer2);
+*/
 
 
         tx.commit();
