@@ -13,6 +13,16 @@ public class Student {
 	private String name;
 	
 	private String city;
+
+	public Certificate getCertificate() {
+		return certificate;
+	}
+
+	public void setCertificate(Certificate certificate) {
+		this.certificate = certificate;
+	}
+
+	private  Certificate certificate;
 	
 	@Override
 	public String toString() {
@@ -23,11 +33,12 @@ public class Student {
 		super();
 	}
 
-	public Student(int id, String name, String city) {
+	public Student(int id, String name, String city, Certificate certificate) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.city = city;
+		this.certificate = certificate;
 	}
 
 	public int getId() {
