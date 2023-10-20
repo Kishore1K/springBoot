@@ -21,6 +21,7 @@
 		<mapping class="mapping.One2One.Answer" />
 		<mapping class="mapping.Many2Many.Employee" />
 		<mapping class="mapping.Many2Many.Project" />
+		<mapping resource="Person.hbm.xml" />
 
  	</session-factory>
  </hibernate-configuration>
