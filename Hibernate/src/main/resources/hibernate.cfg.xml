@@ -16,6 +16,8 @@
 		<mapping class="com.sprinng.Address" />
 		<mapping class="mapping.One2One.Question" />
 		<mapping class="mapping.One2One.Answer" />
+		<mapping class="mapping.Many2Many.Employee" />
+		<mapping class="mapping.Many2Many.Project" />
 
  	</session-factory>
  </hibernate-configuration>

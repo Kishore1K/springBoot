@@ -1,4 +1,4 @@
-package mapping;
+package mapping.One2One;
 
 import mapping.One2One.Answer;
 import mapping.One2One.Question;
