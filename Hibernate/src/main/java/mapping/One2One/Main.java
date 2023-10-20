@@ -41,18 +41,21 @@ public class Main {
 
 
 
-/*
-        session.save(question);
+
+/*        session.save(question);
         session.save(answer);
         session.save(answer1);
-        session.save(answer2);
-*/
+        session.save(answer2);*/
+
 
 
         tx.commit();
 //        Fetching data
-        System.out.println("Question = " + session.get(Question.class, 1));
-        System.out.println("Answer = " + session.get(Answer.class, 101));
+        Question q = (Question) session.get(Question.class, 1);
+        System.out.println("q = " + q.getQuestion());
+        System.out.println("q.getQuestionId() = " + q.getQuestionId());
+/*        System.out.println("Question = " + session.get(Question.class, 1));
+        System.out.println("Answer = " + session.get(Answer.class, 101));*/
         session.close();
 
         factory.close();
