@@ -12,7 +12,7 @@ public class Question {
     private  int questionId;
     private  String question;
 
-    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Answer> answers;
 
     public Question(int questionId, String question, List<Answer> answers) {
