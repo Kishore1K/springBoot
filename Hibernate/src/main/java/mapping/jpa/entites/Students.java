@@ -2,10 +2,7 @@ package mapping.jpa.entites;
 
 import mapping.jpa.entites.Laptop;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "jpa_student")
@@ -20,7 +17,7 @@ public class Students {
 
     private String phno;
 
-    @OneToOne(mappedBy = "student")
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
     private Laptop laptop;
     public Students() {
     }
@@ -66,10 +63,7 @@ public class Students {
                 ", name='" + name + '\'' +
                 ", about='" + about + '\'' +
                 ", email='" + email + '\'' +
-
                 ", phno='" + phno + '\'' +
-
-
                 ", laptop=" + laptop +
                 '}';
     }
