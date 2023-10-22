@@ -31,6 +31,8 @@ public class Main {
         session.close();
 
 //        one2Many
+//        Many2Many
+
 
 
     }
