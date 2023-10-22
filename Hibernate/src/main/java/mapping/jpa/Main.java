@@ -30,5 +30,8 @@ public class Main {
         System.out.println("session = " + session.get(Students.class, 1).getName());
         session.close();
 
+//        one2Many
+
+
     }
 }
