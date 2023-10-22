@@ -1,4 +1,4 @@
-package mapping.jpa;
+package mapping.jpa.entites;
 
 import javax.persistence.*;
 
@@ -12,12 +12,12 @@ public class Laptop {
 
     @OneToOne
     @JoinColumn(name = "student_id")
-    private Student student;
+    private Students student;
 
     public Laptop() {
     }
 
-    public Laptop(int laptopId, String modelNumber, String brand, Student student) {
+    public Laptop(int laptopId, String modelNumber, String brand, Students student) {
         this.laptopId = laptopId;
         this.modelNumber = modelNumber;
         this.brand = brand;
@@ -49,11 +49,11 @@ public class Laptop {
     }
 
 
-    public Student getStudent() {
+    public Students getStudent() {
         return student;
     }
 
-    public void setStudent(Student student) {
+    public void setStudent(Students student) {
         this.student = student;
     }
 

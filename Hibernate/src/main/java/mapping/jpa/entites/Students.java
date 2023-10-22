@@ -1,4 +1,6 @@
-package mapping.jpa;
+package mapping.jpa.entites;
+
+import mapping.jpa.entites.Laptop;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,24 +9,23 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "jpa_student")
-public class Student {
+public class Students {
 
     @Id
     private int id;
     private  String name;
     private  String about;
 
+    private  String email;
+
+    private String phno;
+
     @OneToOne(mappedBy = "student")
-    private  Laptop laptop;
-    public Student() {
+    private Laptop laptop;
+    public Students() {
     }
 
-    public Student(int id, String name, String about, Laptop laptop) {
-        this.id = id;
-        this.name = name;
-        this.about = about;
-        this.laptop = laptop;
-    }
+
 
     public int getId() {
         return id;
@@ -64,7 +65,28 @@ public class Student {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", about='" + about + '\'' +
+                ", email='" + email + '\'' +
+
+                ", phno='" + phno + '\'' +
+
+
                 ", laptop=" + laptop +
                 '}';
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhno() {
+        return phno;
+    }
+
+    public void setPhno(String phno) {
+        this.phno = phno;
     }
 }

@@ -22,6 +22,8 @@
 		<mapping class="mapping.Many2Many.Employee" />
 		<mapping class="mapping.Many2Many.Project" />
 		<mapping resource="Person.hbm.xml" />
+		<mapping class="mapping.jpa.entites.Students" />
+		<mapping class="mapping.jpa.entites.Laptop" />
 
  	</session-factory>
  </hibernate-configuration>
