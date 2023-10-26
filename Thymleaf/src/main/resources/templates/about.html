@@ -8,9 +8,15 @@
     <title>About Page</title>
 </head>
 <body>
-
+    <h2>Hello Intro to Thymeleaf</h2>
     <h1>About Page</h1>
-    <h2 th:text="${name}" />
+    <h2 th:text="${#strings.toLowerCase(name)}" />
     <h2 th:text="${date}" />
+    <h1> Hello <span th:text="${name}"></span>Length of the Name is <span th:text="${#strings.length(name)}"></h1>
+
+    <div th:with="a=5, b=67, n=${name}">
+
+        <h2>Value of a is <span th:text="${a}" /> Value of b is <span th:text="${b}" /> sum = <span th:number="${a+b}"/></h2>
+    </div>
 </body>
 </html>

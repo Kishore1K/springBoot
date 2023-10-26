@@ -13,6 +13,7 @@ public class MyController {
     @GetMapping("/about")
     public  String about(Model model){
         System.out.println("MyController.about");
+
         model.addAttribute("name", "Kishore");
         model.addAttribute("date", new Date().toString());
         return  "about";
