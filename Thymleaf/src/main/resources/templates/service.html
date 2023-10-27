@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service</title>
+</head>
+<body>
+    <h1>Service Page</h1>
+
+<!--    replace-->
+<footer id="host" th:replace="footer::footer1"></footer>
+<!--include-->
+<footer id="host" th:include="footer.html::footer2"></footer>
+<!--    insert-->
+    <footer id="host" th:insert="footer.html::footer1"></footer>
+
+</body>
+</html>

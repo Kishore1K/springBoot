@@ -36,4 +36,9 @@ public class MyController {
         m.addAttribute("nums", nums);
         return  "condition";
     }
+
+    @GetMapping("/service")
+    public  String serviceHandler(Model m){
+        return  "service";
+    }
 }
