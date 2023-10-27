@@ -27,4 +27,13 @@ public class MyController {
         m.addAttribute("names", names);
         return  "iterate";
     }
+
+    @GetMapping("/condition")
+    public String conditionHandler(Model m){
+        m.addAttribute("isActive", false);
+        m.addAttribute("gender", "M");
+        List<Integer> nums = List.of(10,11,12,13,14,15,16);
+        m.addAttribute("nums", nums);
+        return  "condition";
+    }
 }

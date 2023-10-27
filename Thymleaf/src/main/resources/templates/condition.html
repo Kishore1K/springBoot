@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> condition Statement </h1>
+<!--    Elvis Operator-->
+    <h1> User  is <span th:style="${isActive} ? 'color:green' : 'color:red'" th:text="${isActive} ? 'Active':'Not Active'"></span></h1>
+
+<!--    if - unless -->
+    <h1 th:if="${gender}=='M'">MALE</h1>
+    <h1 th:unless="${gender}=='M'">Female</h1>
+
+<!--Switch -->
+    <div th:switch="${#lists.size(nums)}">
+        <h1 th:case="'0'">List Contains O Elements</h1>
+        <h1 th:case="'1'">List Contains 1 Elements</h1>
+        <h1 th:case="'4'">List Contains 4 Elements</h1>
+        <h1 th:case="*">List Contains More than 4 Elements</h1>
+
+
+    </div>
+</body>
+</html>
