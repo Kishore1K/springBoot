@@ -16,7 +16,9 @@
 
     <div th:with="a=5, b=67, n=${name}">
 
-        <h2>Value of a is <span th:text="${a}" /> Value of b is <span th:text="${b}" /> sum = <span th:number="${a+b}"/></h2>
+        <h2>Value of a is <span th:text="${a}" /> Value of b is <span th:text="${b}" /> sum = <span th:text="${a+b}"/></h2>
     </div>
+
+    <h1 th:text="${names}"></h1>
 </body>
 </html>
