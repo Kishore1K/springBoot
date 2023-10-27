@@ -41,4 +41,15 @@ public class MyController {
     public  String serviceHandler(Model m){
         return  "service";
     }
+
+    @GetMapping("/new1")
+    public  String inhertanceHandler(){
+        return  "about_new";
+
+    }
+    @GetMapping("/new2")
+    public  String contactHandler(){
+        return  "contact";
+
+    }
 }
