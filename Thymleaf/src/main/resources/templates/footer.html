@@ -6,10 +6,13 @@
 </head>
 <body>
 
-    <footer th:fragment="footer1">
+    <footer th:fragment="footer1(title, subtitle)">
         <div class="container" >
 
             <h1>This is Footer page</h1>
+            <h1 th:text="${title}"></h1>
+            <h1 th:text="${subtitle}"></h1>
+
             <h1>This is a Footer Page Fragment</h1>
         </div>
     </footer>

@@ -8,11 +8,11 @@
     <h1>Service Page</h1>
 
 <!--    replace-->
-<footer id="host" th:replace="footer::footer1"></footer>
+<footer id="host" th:replace="footer::footer1('This is Title', 'This is Sub')"></footer>
 <!--include-->
 <footer id="host" th:include="footer.html::footer2"></footer>
 <!--    insert-->
-    <footer id="host" th:insert="footer.html::footer1"></footer>
+    <footer id="host" th:insert="footer.html::footer1(${title}, ${subtitle})"></footer>
 
 </body>
 </html>
