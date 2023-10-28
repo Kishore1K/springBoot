@@ -1,9 +1,9 @@
 package com.spring.thymleaf.controller;
 
+import com.spring.thymleaf.entity.LoginData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -54,6 +54,20 @@ public class MyController {
     @GetMapping("/new2")
     public  String contactHandler(){
         return  "contact";
+
+    }
+
+    @GetMapping("/form")
+    public  String formHandler(Model m){
+        m.addAttribute("loginData", new LoginData());
+
+        return  "form";
+    }
+
+    @PostMapping("/process")
+    public  String processForm(@ModelAttribute("loginData") LoginData loginData){
+        System.out.println(loginData);
+        return  "success";
 
     }
 }
