@@ -1,0 +1,10 @@
+*{
+    font-family: SansSerif Arial, serif;
+    text-align: center;
+    justify-content: center;
+    background: cadetblue;
+}
+
+.btn{
+    background: aliceblue;
+}
