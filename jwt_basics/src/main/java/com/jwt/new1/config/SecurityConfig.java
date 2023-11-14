@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private  CustomUserDetailService customUserDetailService;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http.cors().disable().csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/token").permitAll()
                 .anyRequest().authenticated()
@@ -45,3 +45,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 }
+//https://www.toptal.com/spring/spring-security-tutorial
