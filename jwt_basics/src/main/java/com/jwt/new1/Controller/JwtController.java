@@ -1,9 +1,9 @@
-package com.jwt.Controller;
+package com.jwt.new1.Controller;
 
-import com.jwt.model.JwtToken;
-import com.jwt.model.LoginDTO;
-import com.jwt.Service.CustomUserDetailService;
-import com.jwt.helper.JwtUtil;
+import com.jwt.new1.model.JwtToken;
+import com.jwt.new1.model.LoginDTO;
+import com.jwt.new1.Service.CustomUserDetailService;
+import com.jwt.new1.helper.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +33,7 @@ public class JwtController {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getUsername(),loginDTO.getPassword()));
 
         }catch (UsernameNotFoundException e){
+            e.printStackTrace();
             throw new Exception("User  Not Found");
         }
 

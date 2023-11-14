@@ -1,4 +1,4 @@
-package com.jwt.Controller;
+package com.jwt.new1.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.jwt.helper;
+package com.jwt.new1.helper;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

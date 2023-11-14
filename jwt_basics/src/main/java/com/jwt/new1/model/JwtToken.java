@@ -1,4 +1,4 @@
-package com.jwt.model;
+package com.jwt.new1.model;
 
 public class JwtToken {
     private String token;
