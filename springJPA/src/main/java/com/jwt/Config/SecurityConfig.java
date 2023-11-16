@@ -49,6 +49,11 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder(10);
     }
 
+    public SecurityFilterChain securityFilterChain(HttpSecurity http){
+        http.csrf().disable()
+                .exceptionHandling()
+                .authenticationEntryPoint(j)
+    }
 
 
 }
