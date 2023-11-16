@@ -22,8 +22,7 @@ public class JWTUtils {
     public static final String ROLES = "ROLES";
 
 
-    @Value("${jwt.secret}")
-    private String secret;
+    private final String secret="kishore";
 
     private Claims getAllClaimsFromToken(String token){
         return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
